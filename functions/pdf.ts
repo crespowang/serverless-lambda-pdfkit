@@ -1,6 +1,6 @@
+import PDFDocument from "pdfkit";
 import middy from "@middy/core";
 import doNotWaitForEmptyEventLoop from "@middy/do-not-wait-for-empty-event-loop";
-import PDFDocument from "pdfkit";
 
 const generatePdf = async (): Promise<Buffer> => {
   return new Promise((resolve: Function, reject: Function): any => {

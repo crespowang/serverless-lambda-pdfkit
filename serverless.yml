@@ -8,8 +8,6 @@ provider:
   region: ap-southeast-2
   stage: dev
   profile: hotpuma
-  environment:
-    IS_OFFLINE: ${opt:offline}
   apiGateway:
     binaryMediaTypes:
       - "application/pdf"
@@ -21,17 +19,15 @@ plugins:
 custom:
   webpack:
     webpackConfig: webpack.config.js
-    includeModules:
-      forceExclude:
-        - aws-sdk
-    packager: "yarn"
+    packager: "npm"
+    includeModules: true
 
   serverless-offline:
     location: .webpack/service
 
   customDomain:
     domainName: labs.mianio.com
-    basePath: demo
+    basePath: pdfkit
     stage: ${self:provider.stage}
     createRoute53Record: true
 
@@ -41,6 +37,6 @@ functions:
     handler: functions/pdf.generate
     events:
       - http:
-          path: pdfkit/pdf
+          path: demo
           method: get
           cors: true
