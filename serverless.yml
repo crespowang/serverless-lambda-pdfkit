@@ -1,0 +1,46 @@
+service: serverless-lambda-pdfkit
+frameworkVersion: "1.63.0"
+
+provider:
+  name: aws
+  versionFunctions: false
+  runtime: nodejs12.x
+  region: ap-southeast-2
+  stage: dev
+  profile: hotpuma
+  environment:
+    IS_OFFLINE: ${opt:offline}
+  apiGateway:
+    binaryMediaTypes:
+      - "application/pdf"
+plugins:
+  - serverless-webpack
+  - serverless-domain-manager
+  - serverless-offline
+
+custom:
+  webpack:
+    webpackConfig: webpack.config.js
+    includeModules:
+      forceExclude:
+        - aws-sdk
+    packager: "yarn"
+
+  serverless-offline:
+    location: .webpack/service
+
+  customDomain:
+    domainName: labs.mianio.com
+    basePath: demo
+    stage: ${self:provider.stage}
+    createRoute53Record: true
+
+functions:
+  pdfkit-demo:
+    # provisionedConcurrency: 1
+    handler: functions/pdf.generate
+    events:
+      - http:
+          path: pdfkit/pdf
+          method: get
+          cors: true
