@@ -1,3 +1,4 @@
 .serverless
 node_modules
 .webpack
+pdfkit-layer.zip

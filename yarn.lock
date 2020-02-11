@@ -297,14 +297,14 @@
     "@hapi/bourne" "1.x.x"
     "@hapi/hoek" "8.x.x"
 
-"@middy/core@^1.0.0-beta.4":
+"@middy/core@^1.0.0-beta.5":
   version "1.0.0-beta.5"
   resolved "https://registry.yarnpkg.com/@middy/core/-/core-1.0.0-beta.5.tgz#a62c1834d43a0f4e73a4fc6546737f7513653042"
   integrity sha512-aQESYn6jJQ73pjwk1hponQ9K1taxNSI6rxMuN8Im/nc7CwFwWu+c9iSRHwbWACu4rsleTn37lWUAH/vvZ7oEHg==
   dependencies:
     once "^1.4.0"
 
-"@middy/do-not-wait-for-empty-event-loop@^1.0.0-beta.4":
+"@middy/do-not-wait-for-empty-event-loop@^1.0.0-beta.5":
   version "1.0.0-beta.5"
   resolved "https://registry.yarnpkg.com/@middy/do-not-wait-for-empty-event-loop/-/do-not-wait-for-empty-event-loop-1.0.0-beta.5.tgz#a2f6e33712d45b6195292ca86ecdc48f470b08b7"
   integrity sha512-qFS43btR0l9qmvN6UQBKdRDbmddNIGguCdZheP1Zrx9ISDYCpINxpGGYSG+DQmRhgfD69txoWSxe71zZ582Uxg==
@@ -426,6 +426,11 @@
   integrity sha512-XIB2XbzHTN6ieIjfIMV9hlVcfPU26s2vafYWQcZHWXHOxiaRZYEDKEwdl129Zyg50+foYV2jCgtrqSA6qNuNSA==
   dependencies:
     defer-to-connect "^1.0.1"
+
+"@types/aws-lambda@^8.10.40":
+  version "8.10.40"
+  resolved "https://registry.yarnpkg.com/@types/aws-lambda/-/aws-lambda-8.10.40.tgz#d60b912a9425f74f60c57667a8c6b99d58df4ada"
+  integrity sha512-D0hOUw2y6in/cPWv0JMMCBnO3Hc/DNeLi8QQ1wymwk9Eixh6IFgVnCGJnUHefjxKEAVxL7z6LKBsFUrIjKygRg==
 
 "@types/color-name@^1.1.1":
   version "1.1.1"
@@ -4703,7 +4708,7 @@ pbkdf2@^3.0.3:
     safe-buffer "^5.0.1"
     sha.js "^2.4.8"
 
-pdfkit@0.11.0:
+pdfkit@^0.11.0:
   version "0.11.0"
   resolved "https://registry.yarnpkg.com/pdfkit/-/pdfkit-0.11.0.tgz#9cdb2fc42bd2913587fe3ddf48cc5bbb3c36f7de"
   integrity sha512-1s9gaumXkYxcVF1iRtSmLiISF2r4nHtsTgpwXiK8Swe+xwk/1pm8FJjYqN7L3x13NsWnGyUFntWcO8vfqq+wwA==

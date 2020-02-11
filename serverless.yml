@@ -16,11 +16,21 @@ plugins:
   - serverless-domain-manager
   - serverless-offline
 
+layers:
+  Pdfkit:
+    name: Pdfkit
+    compatibleRuntimes:
+      - nodejs12.x
+    description: Required for Pdfkit
+    package:
+      artifact: layer/pdfkit-layer.zip
 custom:
   webpack:
     webpackConfig: webpack.config.js
-    packager: "npm"
-    includeModules: true
+    includeModules:
+      forceExclude:
+        - pdfkit
+    packager: "yarn"
 
   serverless-offline:
     location: .webpack/service
@@ -35,6 +45,8 @@ functions:
   pdfkit-demo:
     # provisionedConcurrency: 1
     handler: functions/pdf.generate
+    layers:
+      - { Ref: PdfkitLambdaLayer }
     events:
       - http:
           path: demo
